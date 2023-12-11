@@ -16,12 +16,12 @@ class SettingTableSeeder extends Seeder
     {
         DB::table('setting')->insert([
             'id_setting' => 1,
-            'nama_perusahaan' => 'Toko Ku',
-            'alamat' => 'Jl. Kibandang Samaran Ds. Slangit',
-            'telepon' => '081234779987',
+            'nama_perusahaan' => 'Apotek ReAn Farma',
+            'alamat' => 'Jl. Pangeran Natadirja, Kota Bengkulu',
+            'telepon' => '0895622090988',
             'tipe_nota' => 1, // kecil
             'diskon' => 5,
-            'path_logo' => '/img/logo.png',
+            'path_logo' => '/img/logo1.png',
             'path_kartu_member' => '/img/member.png',
         ]);
     }
