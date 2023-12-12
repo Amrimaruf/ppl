@@ -54,7 +54,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->level = 2;
+        $user->level = 3;
         $user->foto = '/img/user.jpg';
         $user->save();
 

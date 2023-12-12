@@ -18,7 +18,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li>
                 <a href="{{ route('dashboard') }}">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <i class="fa fa-dashboard"></i> <span>Beranda</span>
                 </a>
             </li>
 
@@ -26,12 +26,12 @@
             <li class="header">MASTER</li>
             <li>
                 <a href="{{ route('kategori.index') }}">
-                    <i class="fa fa-cube"></i> <span>Kategori</span>
+                    <i class="fa fa-cube"></i> <span>Kategori Obat</span>
                 </a>
             </li>
             <li>
                 <a href="{{ route('produk.index') }}">
-                    <i class="fa fa-cubes"></i> <span>Produk</span>
+                    <i class="fa fa-cubes"></i> <span>Produk Obat</span>
                 </a>
             </li>
             <!-- <li>
@@ -41,7 +41,7 @@
             </li> -->
             <li>
                 <a href="{{ route('supplier.index') }}">
-                    <i class="fa fa-truck"></i> <span>Supplier</span>
+                    <i class="fa fa-truck"></i> <span>Distributor</span>
                 </a>
             </li>
             <li class="header">TRANSAKSI</li>
@@ -83,7 +83,7 @@
                 </a>
             </li>
             @else
-            <li>
+            <!-- <li>
                 <a href="{{ route('transaksi.index') }}">
                     <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Aktif</span>
                 </a>
@@ -92,7 +92,48 @@
                 <a href="{{ route('transaksi.baru') }}">
                     <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Baru</span>
                 </a>
+            </li> -->
+            <li>
+                <a href="{{ route('kategori.index') }}">
+                    <i class="fa fa-cube"></i> <span>Kategori Obat</span>
+                </a>
             </li>
+            <li>
+                <a href="{{ route('produk.index') }}">
+                    <i class="fa fa-cubes"></i> <span>Produk Obat</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="{{ route('member.index') }}">
+                    <i class="fa fa-id-card"></i> <span>Member</span>
+                </a>
+            </li> -->
+            <li>
+                <a href="{{ route('supplier.index') }}">
+                    <i class="fa fa-truck"></i> <span>Distributor</span>
+                </a>
+            </li>
+            @endif
+
+            @if (auth()->user()->level == 3)
+            <li class="header">REPORT</li>
+            <li>
+                <a href="{{ route('laporan.index') }}">
+                    <i class="fa fa-file-pdf-o"></i> <span>Laporan</span>
+                </a>
+            </li>
+            <li class="header">SYSTEM</li>
+            <li>
+                <a href="{{ route('user.index') }}">
+                    <i class="fa fa-users"></i> <span>User</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route("setting.index") }}">
+                    <i class="fa fa-cogs"></i> <span>Pengaturan</span>
+                </a>
+            </li>
+
             @endif
         </ul>
     </section>
