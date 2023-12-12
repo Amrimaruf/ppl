@@ -9,20 +9,28 @@
     <li class="active">Daftar User</li>
 @endsection
 
+@php
+    $userLevel = Auth::user()->level; // Gantilah ini dengan cara Anda mendapatkan level pengguna
+@endphp
+
 @section('content')
 <div class="row">
     <div class="col-lg-12">
         <div class="box">
-            <div class="box-header with-border">
-                <button onclick="addForm('{{ route('user.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Tambah</button>
-            </div>
+            @if($userLevel != 3)
+                <div class="box-header with-border">
+                    <button onclick="addForm('{{ route('user.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Tambah</button>
+                </div>
+            @endif
             <div class="box-body table-responsive">
                 <table class="table table-stiped table-bordered">
                     <thead>
                         <th width="5%">No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th width="15%"><i class="fa fa-cog"></i></th>
+                        @if($userLevel != 3)
+                            <th width="15%"><i class="fa fa-cog"></i></th>
+                        @endif
                     </thead>
                 </table>
             </div>
@@ -50,7 +58,11 @@
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
                 {data: 'name'},
                 {data: 'email'},
+                @if($userLevel != 3)
                 {data: 'aksi', searchable: false, sortable: false},
+                 @else
+                {data: null, searchable: false, sortable: false, defaultContent: ''},
+                @endif
             ]
         });
 
@@ -118,5 +130,6 @@
                 });
         }
     }
+
 </script>
 @endpush

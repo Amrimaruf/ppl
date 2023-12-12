@@ -31,7 +31,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'name' => 'Manajer',
-                'email' => 'manajee@gmail.com',
+                'email' => 'manajer@gmail.com',
                 'password' => bcrypt('123'),
                 'foto' => '/img/user.jpg',
                 'level' => 3
