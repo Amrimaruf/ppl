@@ -23,7 +23,8 @@
                 <th>Tanggal</th>
                 <th>Penjualan</th>
                 <th>Pembelian</th>
-                <th>Pengeluaran</th>
+                <!-- Hapus baris Pengeluaran hanya pada tampilan PDF -->
+                <th style="display: none;">Pengeluaran</th>
                 <th>Pendapatan</th>
             </tr>
         </thead>
@@ -31,7 +32,10 @@
             @foreach ($data as $row)
                 <tr>
                     @foreach ($row as $col)
-                        <td>{{ $col }}</td>
+                        <!-- Hapus kolom Pengeluaran hanya pada tampilan PDF -->
+                        @if ($loop->index != 4)
+                            <td>{{ $col }}</td>
+                        @endif
                     @endforeach
                 </tr>
             @endforeach

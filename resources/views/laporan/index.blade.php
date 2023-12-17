@@ -28,7 +28,7 @@
                         <th>Tanggal</th>
                         <th>Penjualan</th>
                         <th>Pembelian</th>
-                        <th>Pengeluaran</th>
+                        <!-- <th>Pengeluaran</th> -->
                         <th>Pendapatan</th>
                     </thead>
                 </table>
@@ -59,7 +59,7 @@
                 {data: 'tanggal'},
                 {data: 'penjualan'},
                 {data: 'pembelian'},
-                {data: 'pengeluaran'},
+                // {data: 'pengeluaran'},
                 {data: 'pendapatan'}
             ],
             dom: 'Brt',

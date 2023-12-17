@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('title')
-    Daftar Produk
+    Daftar Produk Obat
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Daftar Produk</li>
+    <li class="active">Daftar Produk Obat</li>
 @endsection
 
 @section('content')
@@ -41,7 +41,7 @@
                             <!-- <th>Merk</th> -->
                             <th>Harga Beli</th>
                             <th>Harga Jual</th>
-                            <th>Diskon</th>
+                            <!-- <th>Diskon</th> -->
                             <th>Stok</th>
                             @if($userLevel != 3)
                                 <th width="15%"><i class="fa fa-cog"></i></th>
@@ -79,7 +79,7 @@
                 // {data: 'merk'},
                 {data: 'harga_beli'},
                 {data: 'harga_jual'},
-                {data: 'diskon'},
+                // {data: 'diskon'},
                 {data: 'stok'},
                 @if($userLevel != 3)
                 {data: 'aksi', searchable: false, sortable: false},

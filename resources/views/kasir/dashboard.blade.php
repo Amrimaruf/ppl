@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard
+    Beranda
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Dashboard</li>
+    <li class="active">Beranda</li>
 @endsection
 
 @section('content')

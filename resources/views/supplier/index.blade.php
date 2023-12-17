@@ -1,21 +1,29 @@
 @extends('layouts.master')
 
 @section('title')
-    Daftar Supplier
+    Daftar Distributor
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Daftar Supplier</li>
+    <li class="active">Daftar Distributor</li>
 @endsection
 
 @section('content')
+
+@php
+    $userLevel = Auth::user()->level; // Gantilah ini dengan cara Anda mendapatkan level pengguna
+@endphp
 <div class="row">
     <div class="col-lg-12">
         <div class="box">
             <div class="box-header with-border">
-                <button onclick="addForm('{{ route('supplier.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Tambah</button>
-            </div>
+            @if($userLevel != 3)
+                    <div class="btn-group">
+                    <button onclick="addForm('{{ route('supplier.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus-circle"></i> Tambah</button>
+                </div>
+                @endif
+                </div>
             <div class="box-body table-responsive">
                 <table class="table table-stiped table-bordered">
                     <thead>
@@ -52,7 +60,11 @@
                 {data: 'nama'},
                 {data: 'telepon'},
                 {data: 'alamat'},
+                @if($userLevel != 3)
                 {data: 'aksi', searchable: false, sortable: false},
+                @else
+                {data: null, searchable: false, sortable: false, defaultContent: ''},
+                @endif
             ]
         });
 
